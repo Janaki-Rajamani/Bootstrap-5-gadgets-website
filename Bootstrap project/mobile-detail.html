@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link href="style.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+</head>
+<body onload="showCart();setScroll();showFav()">
+<!-- Modal -->
+<!--cart modal-->
+<div class="modal" id="Modalcart" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="cartlist">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Checkout</button>
+        <button type="button" class="btn btn-primary" onclick="clearCart()">Clear Cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--end of cart modal-->
+<!--fav modal-->
+<div class="modal" id="Modalfav" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Favorites</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="favlist">
+        
+      </div>
+      <div class="modal-footer">
+       
+        <button type="button" class="btn btn-primary" onclick="clearFav()">Clear List</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--end of fav modal-->
+<!--end of modal-->
+<!--Nav bar-->
+
+<nav class="navbar navbar-expand-lg bg-warning fixed-top" id="nav1">
+
+  <div class="container-fluid">
+  
+    <a class="navbar-brand" href="home.html"><img class="logo" src="images/logo1.png"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+         
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle dropend" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            All Catagories
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+		  <li class="text-secondary">TOP CATEGORIES</li>
+            <li><a class="dropdown-item" href="mobiles.html">Mobile</a></li>
+            <li><a class="dropdown-item" href="#">Tablets</a></li>
+            <li><a class="dropdown-item" href="#">Accessories</a></li>
+			
+			<li class="text-secondary">BRANDS</li>
+          </ul>
+        </li>
+		<li class="nav-item">
+                 
+		  </li>
+      </ul>
+    </div>
+	<!-- Button trigger modal -->
+
+<button type="button" class="btn position-relative"data-bs-toggle="modal" data-bs-target="#Modalcart" onclick="displayCart()">
+	<img class="nav-icon" src="images/cart.png">
+	 <span class="position-absolute top-45 start-50 translate-middle badge rounded-circle bg-danger" id="cartitem">
+    
+  
+  </span></button>
+	<button type="button" class="btn position-relative"data-bs-toggle="modal" data-bs-target="#Modalfav" onclick="displayfav()">
+	<img class="nav-icon" src="images/favourite.png">
+	<span class="position-absolute top-45 start-50 translate-middle badge rounded-circle bg-danger" id="favitem">
+   </button> 
+  </div>
+</nav>
+<!--end of nav bar-->
+<div class="container-fluid">
+<div class="procontainer container-fluid">
+<div class="row">
+<!--product image-->
+<div class="imagegallery col col-lg-5" style="height:80%;position:fixed;">
+
+<img src="images\dmobile1.jpg" id="imgView">
+<div class="imgthumbs" onmouseover="changeImage(event)">
+<img src="images\dmobile1.jpg" id="imgThumb"><br>
+<img src="images\dmobile2.jpg" id="imgThumb"><br>
+<img src="images\dmobile3.jpg" id="imgThumb"><br>
+<img src="images\dmobile4.jpg" id="imgThumb"><br>
+<img src="images\dmobile6.jpg" id="imgThumb"><br>
+</div>
+<button class="btn btn-primary btn-lg" type="submit" id="buynow" style="margin-top:20px;margin-left:300px;"onclick="addCart()">Add to cart</button>
+
+</div>
+
+<div class="adv" id="adv_flyer">
+<img src="images\adv.jpg" id="adv_flyerimg">
+</div>
+
+<!--end of product image-->
+<!--product description-->
+<div class="col col-lg-7 productDescription">
+<h4>vivo T2x 5G (Marine Blue, 128 GB)</h4>  (4 GB RAM)<br>
+
+<span style="font-size:30px;"><b>₹12,999</b></span><br>
+
+<div><p id="highlight_title">Highlights</p></div>
+<div id="highlight_desc">
+<ul>
+<li>4 GB RAM | 128 GB ROM</li>
+<li>16.71 cm (6.58 inch) Full HD+ Display</li>
+<li>50MP + 2MP | 8MP Front Camera</li>
+<li>5000 mAh Battery</li>
+<li>Dimensity 6020 Processor</li>
+</ul>
+</div>
+<div id="desc_title">Description</div>
+<div id="product_desc">
+<p class="text-wrap">With the superb Vivo T2x 5G, you can take advantage of great pictures and a flawless user experience. With the Vivo T2x 5G, you can experience exceptional performance owing to its 7 nm 5G CPU, the octa-core Dimensity 6020, with a top clock speed of 2.2 GHz. Additionally, the 50 MP main camera on this smartphone beautifully catches every detail you see. Additionally, Super Night Selfie employs noise cancellation technology in conjunction with an Aura Screen Light to produce a calming light that is effective in low light. The pioneering Extended RAM 3.0 technology also uses ROM to expand RAM with a maximum capacity of 8 GB. This enables smooth app switching and allows up to 27 active applications to run in the background.</p>
+</div>
+<div>
+
+<ul>
+<li>7 Days Service Center Replacement/Repair?</li>
+<li>GST invoice available?</li>
+<li>See other sellers</li>
+<li>Easy Payment Options</li>
+<li>EMI starting from ₹458/month</li>
+<li>Cash on Delivery</li>
+<li>Net banking & Credit/ Debit/ ATM card</li>
+</ul>
+</div>
+<div class="card productspec">
+  <div class="card-header">
+    Specifications
+  </div>
+  <div class="card-body" >
+    
+    <p class="card-text">
+	<table class="progeneral">
+	<tr><td colspan="2"><span class="section">General</span></td></tr>
+	<tr><td class="progeneralfeature">	In The Box	</td><td class="progeneraldesc">	Handset, USB Power Adapter, USB Cable, Sim Eject Tool, Phone Case, Protective Film (Applied), Documentation	</td></tr>
+<tr><td class="progeneralfeature">	Model Number	</td><td class="progeneraldesc">	V2253	</td></tr>
+<tr><td class="progeneralfeature">	Model Name	</td><td class="progeneraldesc">	T2x 5G	</td></tr>
+<tr><td class="progeneralfeature">	Color	</td><td class="progeneraldesc">	Marine Blue	</td></tr>
+<tr><td class="progeneralfeature">	Browse Type	</td><td class="progeneraldesc">	Smartphones	</td></tr>
+<tr><td class="progeneralfeature">	SIM Type	</td><td class="progeneraldesc">	Dual Sim	</td></tr>
+<tr><td class="progeneralfeature">	Hybrid Sim Slot	</td><td class="progeneraldesc">	Yes	</td></tr>
+<tr><td class="progeneralfeature">	Touchscreen	</td><td class="progeneraldesc">	Yes	</td></tr>
+<tr><td class="progeneralfeature">	OTG Compatible	</td><td class="progeneraldesc">	Yes	</td></tr>
+<tr><td class="progeneralfeature" id="scrollhere">	Quick Charging	</td><td class="progeneraldesc">	Yes	</td></tr>
+<tr><td colspan=2><hr></td></tr>
+<tr><td colspan=2><span class="section" >	Other Details	</span></td></tr>		
+<tr><td class="progeneralfeature">	Smartphone	</td><td class="progeneraldesc">	Yes	</td></tr>
+<tr><td class="progeneralfeature">	SIM Size	</td><td class="progeneraldesc">	Nano Sim	</td></tr>
+<tr><td class="progeneralfeature">	User Interface	</td><td class="progeneraldesc">	Funtouch OS 13 (Based on Android 13)	</td></tr>
+<tr><td class="progeneralfeature">	Removable Battery	</td><td class="progeneraldesc">	No	</td></tr>
+<tr><td class="progeneralfeature">	SMS	</td><td class="progeneraldesc">	Yes	</td></tr>
+<tr><td class="progeneralfeature">	SIM Access	</td><td class="progeneraldesc">	Dual Sim Dual Standby (DSDS)	</td></tr>
+<tr><td class="progeneralfeature">	Sensors	</td><td class="progeneraldesc">	Accelerometer, Ambient Light Sensor, Proximity Sensor, E-Compass, Fingerprint Sensor, Gyroscope	</td></tr>
+<tr><td class="progeneralfeature">	Other Features	</td><td class="progeneraldesc">	Handset Material: 2.5D Plastic, 18W Fast Charging, Video Recording: MP4	</td></tr>
+<tr><td class="progeneralfeature">	GPS Type	</td><td class="progeneraldesc">	GPS, BEIDOU, GLONASS, GALILEO, QZSS	</td></tr>
+<tr><td colspan=2><hr></td></tr>
+<tr><td colspan=2><span class="section">	Multimedia Features	</span></td></tr>		
+<tr><td class="progeneralfeature">	FM Radio	</td><td class="progeneraldesc">	Yes	</td></tr>
+<tr><td class="progeneralfeature">	FM Radio Recording	</td><td class="progeneraldesc">	Yes	</td></tr>
+<tr><td class="progeneralfeature">	Audio Formats	</td><td class="progeneraldesc">	WAV, MP3, MP2, MP1, MIDI, Vorbis, APE, FLAC, AAC, OPUS	</td></tr>
+<tr><td class="progeneralfeature">	Video Formats	</td><td class="progeneraldesc">	MP4, 3GP, MKV, FLV	</td></tr>
+<tr><td colspan=2><hr></td></tr>
+<tr><td colspan=2><span class="section">	Battery & Power Features		</span></td></tr>	
+<tr><td class="progeneralfeature">	Battery Capacity	</td><td class="progeneraldesc">	5000 mAh	</td></tr>
+<tr><td class="progeneralfeature">	Battery Type	</td><td class="progeneraldesc">	Lithium	</td></tr>
+<tr><td colspan=2><hr></td></tr>
+<tr><td colspan=2><span class="section">	Dimensions	</span></td></tr>		
+<tr><td class="progeneralfeature">	Width	</td><td class="progeneraldesc">	75.6 mm	</td></tr>
+<tr><td class="progeneralfeature">	Height	</td><td class="progeneraldesc">	164.05 mm	</td></tr>
+<tr><td class="progeneralfeature">	Depth	</td><td class="progeneraldesc">	8.15 mm	</td></tr>
+<tr><td class="progeneralfeature">	Weight	</td><td class="progeneraldesc">	184 g	</td></tr>
+<tr><td colspan=2><hr></td></tr>
+<tr><td colspan=2><span class="section">	Warranty	</span></td></tr>		
+<tr><td class="progeneralfeature">	Warranty Summary	</td><td class="progeneraldesc">	1 Year of Device & 6 Months for Inbox Accessories	</td></tr>
+<tr><td class="progeneralfeature">	Domestic Warranty	</td><td class="progeneraldesc">	1 Year	</td></tr>
+
+</table>
+
+</p></div>
+<div class="card-footer">
+    <a href="#scrollhere" id="readmore" onclick="showdetails()">Read More</a>
+  </div>
+</div>
+<!--end of product description-->
+</div>
+</div>
+</div>
+<!--Footer-->
+<!-- footer section start --> 
+  <footer class="text-center text-lg-start text-white" id="footer_style">
+   
+    <div class="container p-4 pb-0">
+      
+      <section class="">
+        
+        <div class="row">
+          
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3 footer-element">
+            <h6 class="text-uppercase ps-4 font-weight-bold">
+              my Z
+            </h6>
+            <p>
+              <ul>
+	  <li>Why myZ</li>
+	  <li>Terms and Conditions</li>
+	  <li>Privacy Policy</li>
+	  <li>Returns and Refunds</li>
+	  </ul>
+            </p>
+          </div>
+          
+
+          
+        
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 footer-element">
+            <h6 class="text-uppercase ps-4 font-weight-bold">Shop By</h6>
+            <p>
+              <ul>
+	  <li>Categories</li>
+	  <li>Brands</li>
+	  <li>Find A Store</li>
+	  <li>Sale</li>
+	  </ul>
+            </p>
+          </div>
+         
+<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 footer-element">
+            <h6 class="text-uppercase ps-4 font-weight-bold">Help</h6>
+            <p>
+               <ul>
+	  <li>My Orders</li>
+	  <li>FAQ</li>
+	  <li>Customer Care</li>
+	  <li>Coupons</li>
+	  </ul>
+            </p>
+          </div>
+         
+
+         
+
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
+
+            
+            <img class="p-2" src="images/instagram.png"><img class="p-2" src="images/facebook.png"><img class="p-2" src="images/twitter.png">
+<br>
+<p>Toll Free number :<br>1800-1234-1234</p>
+            
+        
+      </section>
+     
+    </div>
+    
+
+    
+    <div class="text-center p-3" id="footer_cpyright">
+      © 2023 Copyright:
+      <a class="text-white" href="#" id="site_link">myZ.com</a>
+    </div>
+    
+  </footer>
+ <!--end of footer-->
+ 
+
+</body>
+</html>

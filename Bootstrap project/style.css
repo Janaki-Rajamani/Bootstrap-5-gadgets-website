@@ -1,0 +1,181 @@
+
+body
+{margin:0;
+	overflow-x:hidden;
+	
+}
+
+.logo
+{
+	width:60px;
+	height:60px;
+}
+#cartitem
+{
+display:none;}
+
+#favitem
+{
+display:none;}
+
+.tagline
+{
+margin-top:-700px;
+margin-left:170px;
+height:300px;
+
+}
+
+
+.brands
+{
+border:1px solid gray;
+width:75%;
+margin:5px;
+
+}
+.brandcontainer
+{
+	
+	margin-top:70px;
+	margin-left:50px;
+}
+
+.footer{
+	
+padding:10px;
+background-color:black;
+width:100%;	
+height:200px;
+}
+.footer-element{
+	background-color:black;
+	height:150px;
+	overflow-y:hidden;
+	float:right;
+}
+
+
+.footer-element ul{color:white;list-style-type:none;}
+.footer-element h5{color:white;}
+
+.card-title{margin-left:35px;}
+
+.footer-element img{margin-left:30px;}
+
+#carouselFlyer
+{
+margin-top:5px;
+}
+
+
+
+.carousel-item p{
+	color:black;
+font-size:40px;}
+.nav-icon{
+	
+width:40px;
+height:40px;
+padding:10px;}
+
+.navbar-nav li{
+	
+	padding:10px;
+}
+.products{
+	
+margin-left:100px;}
+
+
+
+.products
+{
+
+	margin-bottom:20px;
+	margin-left:120px;
+	
+}
+.product-item{	width:25%;
+height:25%;}
+	
+.card
+{
+border:none;
+width:25%;}
+
+
+input[type=range]::-webkit-slider-runnable-track {
+background: #3071A9;}
+input[type=checkbox] {
+border:1px solid black;}
+
+.bodycontainer
+{
+	
+}
+.modal-backdrop {
+   position: relative;
+   z-index: -1;
+}
+.procontainer
+{
+	min-height:300vh;
+	margin-bottom:-50px;
+	padding-top:100px;
+}
+.imgthumbs{
+margin-left:40px;}
+
+#imgView
+{
+	
+height: 350px;
+width:350px;
+float:right;
+margin-right:20px;
+
+}
+
+#imgThumb
+{
+height: 60px;
+width:60px;
+margin:2px;
+border:2px solid black;
+}
+
+#fav1,#fav2,#fav3,#fav4
+{
+	width:5%;
+	height:5%;
+	margin-top:-250px;
+	display:inline;
+}
+.productDescription
+{
+margin-top:10px;margin-left:580px;height:80%;position:absolute;text-align:justify;}
+
+.section{font-size:20px;}
+
+.progeneral td {padding:5px;font-size:15px;}
+
+.progeneralfeature {width:30%;color:gray;}
+.progeneraldesc{width:70%;}
+.progeneral{width:100%;}
+
+.card-body{height:540px;overflow:hidden;}
+#carouselbtnright{margin-left:-150px;}
+#carouselbtnleft{margin-right:-150px;}
+#carouselbtn_icon{padding:5px;border-radius:30px;}
+#footer_cpyright{background-color: rgba(0, 0, 0, 0.2);}
+#site_link{text-decoration:none;}
+#footer_style{background-color: black;z-index:1;}
+#filter_bar{padding-top:100px;border:1px solid gray;height:60%;}
+#adv_flyer{position:fixed;visibility:hidden;z-index:-1;}
+#adv_flyerimg{height:210px;width:550px;}
+#highlight_title{padding-top:20px;}
+#highlight_desc{margin-top:-40px;margin-left:100px;}
+#desc_title{margin-top:20px;}
+#product_desc{margin-top:-21px;margin-left:100px;width:75%;}
+.productspec{width:600px;}
